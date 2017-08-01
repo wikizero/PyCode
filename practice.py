@@ -68,3 +68,16 @@ while d:
  key, value = d.popitem()
  print key, '-->', value
 popitem是原子的，所以多线程的时候没必要用锁包着它。
+
+def countAndSay(self, n):
+    s = '1'
+    for _ in range(n - 1):
+        s = ''.join(str(len(list(group))) + digit
+                    for digit, group in itertools.groupby(s))
+    return s
+
+for digit, group in itertools.groupby('111221'):
+    print digit, group
+    print list(group)
+
+print re.findall(r'((.)\2*)', ss)
