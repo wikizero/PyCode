@@ -81,3 +81,4 @@ for digit, group in itertools.groupby('111221'):
     print list(group)
 
 print re.findall(r'((.)\2*)', ss)
+http://www.jb51.net/tools/zhengze.html
