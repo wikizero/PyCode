@@ -1,0 +1,56 @@
+多表查询分为 内、外连接
+
+外连接分为左连接（left join 或left outer join）、右连接（right join 或者 right outer join）、和完整外部连接 （full join 或者 full outer join）
+
+ 左连接（left join 或 left outer join）的结果就是left join子句中的左表的所有行，而不仅仅是链接列所匹配的行，如果左表中的某行在右表中没有匹配，则在相关联的结果行中右表的所有选择列均为空值（NULL）
+
+SQL语法　select * from  table1 left join table2 on table1.条件列名 = table2.条件列名；
+
+注释：  显示的就是table1中的所有列和能匹配的列
+
+右连接（right join 或 right outer join ）在这里不做多说这左连接很象但是是相反的，只说一下语法
+
+   select *from table1 right join table2 on table1. 条件列= table2.条件列
+
+完全外部连接（full join 或 full outer join）
+
+显示左右表中的所有行，当某一个表中没有匹配的行时，则另一个表的选择列表列包含空值（NULL）如果有则显示全部数据
+
+SQL语法：
+
+select *from table1 full join table2 on  table1.条件列名= table2.条件列名
+
+内连接：
+概念：内连接就是用比较运算符比较要用连接列的值的连接
+
+内连接（join 或者inner join ）
+
+SQL语法：
+
+select *fron table1 join table2  on table1.条件列名 = table2.条件列名
+
+返回符合匹配条件的两表列
+
+等价于：
+
+           select A* ,B* from table1 A ,table2 B where A.条件列名 =B.条件列名
+
+           select *form table1 cross join table2 where table1.条件列名 = table2.条件列名（注： Cross join 后面不能跟on 只能用where）
+
+  交叉连接（完全）
+
+概念：没有用where子句的交叉连接将产生连接所涉及的笛卡尔积第一个表的行数乘以第二个表的行数等于笛卡尔积和结果集的大小
+
+交叉连接： Cross join（不带条件where，如果带返回或显示的是匹配的行数）
+
+SQL语法：
+
+select *from  table1 cross join table2
+
+如果有条件（where）
+
+select * from table1  cross join table2 where table1. 条件列名= table2.条件列名
+
+等价于
+
+select *from table1,table2 (不带where)
