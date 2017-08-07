@@ -1,0 +1,12 @@
+开启vim模式：
+在菜单栏中： Preferences -> Setting - User 即可打开配置文件进行编辑，将 ignored_packages 项的[]里面内容清空："ignored_packages": []
+再按 Esc 退出编辑模式，即进入了 Vim 模式。
+
+
+安装方法：Ctrl(Mac下Cmd)+Shift+P
+1. `install package` -> Boxy Theme
+2. `install package` -> A File Icon
+
+jedi
+autofilename
+SublimeCodeIntel
