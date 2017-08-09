@@ -82,3 +82,17 @@ for digit, group in itertools.groupby('111221'):
 
 print re.findall(r'((.)\2*)', ss)
 http://www.jb51.net/tools/zhengze.html
+
+# 字典合并方法
+dct1 = {'reverse0': [(609L, 4.585), (615L, 4.285), (966L, 3.585)]}
+dct2 = {'reverse1': [(619L, 3.185), (625L, 4.655), (936L, 1.585)]}
+
+print zip(**{'a':'A', 'b':'B'})
+
+print dict(dct1.items() + dct2.items())
+
+print dict(dct1, **dct2)
+
+temp = dct1.copy()
+temp.update(dct2)
+print temp
