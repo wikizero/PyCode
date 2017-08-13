@@ -96,3 +96,10 @@ print dict(dct1, **dct2)
 temp = dct1.copy()
 temp.update(dct2)
 print temp
+
+如果希望从网络读取文件进行处理，但是又不希望保存文件到硬盘，可以使用cStringIO模块进行处理
+res = urllib2.urlopen(pic,timeout=10)
+f = cStringIO.StringIO(res.read())
+f 是一个文件对象，
+它和：f = open('c:/1.jpg','rw')  打开的文件一样
+可以向操作本地文件一样对内存文件进行读写
