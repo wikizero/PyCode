@@ -103,3 +103,6 @@ f = cStringIO.StringIO(res.read())
 f 是一个文件对象，
 它和：f = open('c:/1.jpg','rw')  打开的文件一样
 可以向操作本地文件一样对内存文件进行读写
+
+m, s = divmod(round(230962/1000.0), 60)
+print ("%02d:%02d" % (m, s))
