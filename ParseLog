@@ -1,0 +1,35 @@
+# coding:utf-8
+import re
+
+
+# 以\[.*\]分割  并过滤空白元素
+def func_split(ss):
+	ss = re.split('\[.*\]', ss)
+	return filter(str.strip, ss)
+
+
+def parse_log(path):
+	with open(path) as fp:
+		text = fp.read()
+
+	# 提取[begin]信息
+	begin_info = re.findall('\[begin\](.*?)\[\w+\]', text, flags=re.DOTALL)
+	# 提取[failBin]同上
+
+	# 将每个芯片的测试信息分别提出来
+	chip_info = re.findall('\[oneTest\](.*?)\[chipInfoEnd\]', text, flags=re.DOTALL)
+
+	# 将每个芯片的每个测试项[oneTest]部分以及[chipInfo]部分分割出来
+	chip_info = map(func_split, chip_info)
+
+	for one_chip in chip_info:
+		print one_chip.pop()  # chipInfo 信息
+		for one_test in one_chip:
+			print one_test
+			print '*'*30
+		print '-'*100
+
+
+if __name__ == '__main__':
+	path = 'log.txt'
+	parse_log(path)
