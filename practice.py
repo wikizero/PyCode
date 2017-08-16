@@ -110,3 +110,5 @@ print ("%02d:%02d" % (m, s))
 正则
 http://www.cnblogs.com/huxi/archive/2010/07/04/1771073.html
  regex： www.cnblogs.com/animalize/p/4949219.html
+
+不以abc开头：^(?!ABC).*
