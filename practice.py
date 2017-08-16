@@ -106,3 +106,7 @@ f 是一个文件对象，
 
 m, s = divmod(round(230962/1000.0), 60)
 print ("%02d:%02d" % (m, s))
+
+正则
+http://www.cnblogs.com/huxi/archive/2010/07/04/1771073.html
+ regex： www.cnblogs.com/animalize/p/4949219.html
